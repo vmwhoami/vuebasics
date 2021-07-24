@@ -1,3 +1,8 @@
+:root {
+  --blue: ##4d87f3;
+  --purple: #e54df3;
+}
+
 #app{
   display: flex;
   width: 100%;
@@ -15,10 +20,10 @@
   box-shadow: 1px 1px 5px #6d6d6d;
 }
 .male{
-  border: 10px solid #4d87f3;
+  border: 10px solid var(--blue);
 }
 .female{
-  border: 10px solid #e54df3;
+  border: 10px solid var(--purple);
 }
 
 img{
@@ -26,4 +31,24 @@ img{
   height: 100%;
   object-fit:cover;
   object-position:left;
+}
+
+.btn{
+  margin-top: 20px;
+  font-size: large;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #e54df3;
+}
+.bg-male{
+  background-color: var(--blue);
+}
+
+.bg-female{
+  background-color: var(--purple);
 }
