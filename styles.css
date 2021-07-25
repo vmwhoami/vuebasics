@@ -20,17 +20,17 @@
   box-shadow: 1px 1px 5px #6d6d6d;
 }
 .male{
-  border: 10px solid var(--blue);
+  border: 20px solid var(--blue);
 }
 .female{
-  border: 10px solid var(--purple);
+  border: 20px solid var(--purple);
 }
 
 img{
   width: 100%;
   height: 100%;
   object-fit:cover;
-  object-position:left;
+  object-position:center;
 }
 
 .btn{
