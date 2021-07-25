@@ -12,11 +12,10 @@
 
 <body>
   <div id="app">
-    <button class="btn">Switch</button>
-    <div class="img" v-on:click="setIndex()">
+    <div :class="setGender()" v-on:click="setIndex()">
       <img v-bind:src="setPicture()" alt="firstName">
     </div>
-    <h2>Hi there</h2>
+    <h2 v-html="setName()"> </h2>
   </div>
   <script defer src="https://unpkg.com/vue@next"></script>
   <script defer src="./app.js"></script>
