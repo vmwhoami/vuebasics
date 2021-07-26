@@ -15,7 +15,28 @@
   <div id="app">
     <div class="flex">
       <div class="flex-none w-48 relative">
+        <button 
+        @click="next(persons[index].img)"
+        v-if="Array.isArray(persons[index].img)"
+        class="absolute 
+        bottom-0 left-0
+        blue-50 w-7 h-7 z-20 bg-gradient-to-r from-blue-100 to-blue-200 flex align-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
         <img v-bind:src="setPicture()"  alt="" class="absolute inset-0 w-full h-full object-cover" />
+
+        <button 
+        @click="next(persons[index].img)"
+        v-if="Array.isArray(persons[index].img)"
+        class="absolute 
+        bottom-0 right-0
+        blue-50 w-7 h-7 z-20 bg-gradient-to-r from-blue-100 to-blue-200 flex align-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+        </button>
       </div>
       <form class="flex-auto p-6">
         <div class="flex flex-wrap">
@@ -34,7 +55,7 @@
        
 
           <div class="w-full flex-none text-sm font-medium text-gray-500 mt-2"
-          v-if="persons[index].inStock"
+          v-if="persons[index].inventory > 0 "
           >
             In stock
           </div>
