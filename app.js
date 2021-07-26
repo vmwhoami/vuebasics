@@ -6,7 +6,8 @@ const persons = [
     'https://thumb-p3.xhcdn.com/a/u_q1So9yAxf1vrqz7i1RjQ/000/368/242/013_1000.jpg',
     'https://img4.goodfon.ru/original/1680x1050/7/e7/model-briunetka-krasotka-pricheska-makiiazh-vzgliad-portret.jpg',
     'https://i.artfile.ru/2560x1600_602422_[www.ArtFile.ru].jpg',
-    'https://uprostim.com/wp-content/uploads/2021/03/image010-65.jpg'
+    'https://uprostim.com/wp-content/uploads/2021/03/image010-65.jpg',
+    'https://yobte.ru/uploads/posts/2019-11/milye-devushki-v-ochkah-70-foto-41.jpg'
   ] },
 ]
 
@@ -14,12 +15,12 @@ const persons = [
 const app = Vue.createApp({
   data() {
     return {
+      total:0,
       index: 0,
       imgIndx:0,
-      isMale: true,
+      sizes:['XS','S','M','L','XL'],
       persons,
-      inStock:true,
-      cart:[]
+      cart:[],
     }
   },
   methods: {
@@ -57,6 +58,10 @@ const app = Vue.createApp({
     addToCart(id) {
      let person =  persons.find(person=> person.id === id);
      this.cart=[...this.cart,person]
+    },
+    setTotal(){
+     let result =  this.cart.reduce((item,red)=>+item.price + red,this.total)
+     console.log(result);
     }
   }
 })
