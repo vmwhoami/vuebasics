@@ -33,8 +33,15 @@
           </div>
        
 
-          <div class="w-full flex-none text-sm font-medium text-gray-500 mt-2">
+          <div class="w-full flex-none text-sm font-medium text-gray-500 mt-2"
+          v-if="persons[index].inStock"
+          >
             In stock
+          </div>
+          <div class="w-full flex-none text-sm font-medium text-gray-500 mt-2"
+          v-else
+          >
+            Out of stock
           </div>
         </div>
         <div class="flex items-baseline mt-4 mb-6">
