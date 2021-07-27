@@ -12,9 +12,10 @@
 </head>
 
 <body>
-  <div id="app">
-    <div class="flex">
-      <div class="flex-none w-48 relative">
+  <div id="app"> 
+<div class="w-3/3 p-5">
+    <div class="flex bg-gray-100 rounded-xl overflow-hidden">
+      <div class="flex-none w-80 relative">
         <button 
         @click="next(persons[index].img)"
         v-if="Array.isArray(persons[index].img)"
@@ -26,7 +27,6 @@
           </svg>
         </button>
         <img v-bind:src="setPicture()"  alt="" class="absolute inset-0 w-full h-full object-cover" />
-
         <button 
         @click="next(persons[index].img)"
         v-if="Array.isArray(persons[index].img)"
@@ -91,6 +91,7 @@
       </form>
   
     </div>
+  </div>
     <button @click="prev()">prev</button>
     <button @click="next()" class="btn">next</button>
 </div>

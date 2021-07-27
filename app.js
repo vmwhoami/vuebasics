@@ -60,8 +60,9 @@ const app = Vue.createApp({
      this.cart=[...this.cart,person]
     },
     setTotal(){
-     let result =  this.cart.reduce((item,red)=>+item.price + red,this.total)
-     console.log(result);
+      const reducer = (accumulator, currentValue) => accumulator + (+currentValue.price) ;
+      return this.cart.reduce(reducer,this.total)
+     
     }
   }
 })
