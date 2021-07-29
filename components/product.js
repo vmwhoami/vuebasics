@@ -11,10 +11,11 @@ const persons = [
   ] },
 ]
 
-
-
-Vue.component('product',{
-  /*html*/
+app.component('product',{
+  props:{
+    persons
+  },
+   /*html*/
   template: `
   <div class="w-3/3 p-5">
     <div class="flex bg-gray-100 rounded-xl overflow-hidden">
@@ -29,7 +30,7 @@ Vue.component('product',{
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <img v-bind:src="setPicture"  alt="" class="absolute inset-0 w-full h-full object-cover" />
+        <img v-bind:src="setPicture"  :alt="setName" class="absolute inset-0 w-full h-full object-cover" />
         <button 
         @click="next(persons[index].img)"
         v-if="Array.isArray(persons[index].img)"
@@ -54,7 +55,7 @@ Vue.component('product',{
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
           </div>
-            "$"{{persons[index].price}}
+            {{persons[index].price}}
           </div>
           <div class="w-full flex-none text-sm font-medium text-gray-500 mt-2"
           v-if="persons[index].inventory > 0 "
@@ -70,7 +71,7 @@ Vue.component('product',{
         <div class="flex items-baseline mt-4 mb-6">
           <div class="space-x-2 flex">
             <label v-for="size in sizes">
-              <input class="w-9 h-9 flex items-center justify-center" name="size" type="radio" :value="size" checked>
+              <input class="w-9 h-9 flex items-center justify-center" name="size" v-model="sizePick" type="radio" :value="size" >
               {{size}}
             </label>
           </div>
@@ -94,8 +95,26 @@ Vue.component('product',{
           </button>
         </div>
       </form>
-  
+      <div class="flex  w-10 w-20">
+      <button 
+      @click="prev()"
+      class=" 
+      blue-50 w-7 h-7 z-20 bg-gradient-to-r from-red-100 to-red-200 flex align-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button 
+      @click="next()"
+      class=" 
+      blue-50 w-7 h-7 z-20 bg-gradient-to-r from-red-100 to-red-200 flex align-center justify-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+      </button>
+      </div>
     </div>
+
   </div>
   `,
   data() {
@@ -105,6 +124,7 @@ Vue.component('product',{
       imgIndx:0,
       sizes:['XS','S','M','L','XL'],
       persons,
+      sizePick:'M',
       cart:[],
     }
   },
