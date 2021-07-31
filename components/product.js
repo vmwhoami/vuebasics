@@ -29,7 +29,7 @@ app.component('product',{
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        <img v-bind:src="setPicture"  :alt="setName" class="absolute inset-0 w-full h-full object-cover" />
+        <img  :src="setPicture"  :alt="setName" class="absolute inset-0 w-full h-full object-cover" />
         <button 
         @click="next(persons[index].img)"
         v-if="Array.isArray(persons[index].img)"

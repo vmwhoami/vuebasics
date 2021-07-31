@@ -2,7 +2,24 @@
 Vue.component('imagine',{
   /*html*/
   template: `
-  <img src="https://i.pinimg.com/originals/cf/43/b8/cf43b8bb3ed4be8021f3af5c5534585e.jpg"  alt="hello" class="w-100 h-100 inset-0 w-full h-full object-cover">
-  `,
+   <div>
+    <div class="flex h-80 w-1/2 relative " @click="changeIndx">
+     <img :src="pictures[index]" alt="hello" class="absolute inset-0 w-full h-full object-cover">
+    </div>
+    </div>
+    `,
+  props: ['pictures'] 
+  ,
+  data(){
+    return{
+      index:0,
+    }
+  },
+  methods:{
+    changeIndx(){
+      if(this.index>=this.pictures.length-1)return this.index=0;
+      return this.index+=1
+    }
+  }
  
 })
