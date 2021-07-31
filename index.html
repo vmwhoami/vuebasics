@@ -8,27 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css" integrity="sha512-y6ZMKFUQrn+UUEVoqYe8ApScqbjuhjqzTuwUMEGMDuhS2niI8KA3vhH2LenreqJXQS+iIXVTRL2iaNfJbDNA1Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./styles.css">
     <!-- Import Vue.js -->
-    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> 
+     
   </head>
   <body>
     <div id="app">
-     <product></product>
-    <counter></counter>
+      <h2>{{name}}</h2>
+      <counter></counter>
+      <imagine></imagine>
     </div>
 
     <!-- Import App -->
-    <script src="./app.js"></script>
 
     <!-- Import Components -->
-    <script src="./components/product.js"></script>
-    <script src="./components/counter.js"></script>
-    <!-- solution -->
- 
-    <!-- solution -->
 
-    <!-- Mount App -->
-    <script>
-      const mountedApp = app.mount('#app')
-    </script>
+ 
+<script src="./components/image.js"></script>
+    <script src="./components/counter.js"></script>
+  <script src="./app.js"></script>
   </body>
 </html>

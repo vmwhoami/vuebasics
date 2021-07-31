@@ -1,10 +1,8 @@
 
-const app = Vue.createApp({
-  data() {
-      return {
-          cart: [],
-          premium: true
-      }
-  },
-  methods: {}
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    name: 'Vitalie!'
+  }
 })

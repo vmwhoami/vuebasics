@@ -1,8 +1,8 @@
 
-app.component('counter',{
+Vue.component('counter',{
   /*html*/
   template: `
-  <button class="bg-red" @click="count+=1">
+  <button class="bg-red-500 w-7 h-7 text-white" @click="count+=1">
   {{count}}
   </button>
   `,

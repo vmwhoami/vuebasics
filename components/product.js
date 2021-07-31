@@ -7,14 +7,13 @@ const persons = [
     'https://img4.goodfon.ru/original/1680x1050/7/e7/model-briunetka-krasotka-pricheska-makiiazh-vzgliad-portret.jpg',
     'https://i.artfile.ru/2560x1600_602422_[www.ArtFile.ru].jpg',
     'https://uprostim.com/wp-content/uploads/2021/03/image010-65.jpg',
-    'https://yobte.ru/uploads/posts/2019-11/milye-devushki-v-ochkah-70-foto-41.jpg'
+    'https://yobte.ru/uploads/posts/2019-11/milye-devushki-v-ochkah-70-foto-41.jpg',
+    'https://i.pinimg.com/originals/48/43/b1/4843b174d8cd5c0b00050c9e801eb6dc.jpg'
   ] },
 ]
 
 app.component('product',{
-  props:{
-    persons
-  },
+ 
    /*html*/
   template: `
   <div class="w-3/3 p-5">
